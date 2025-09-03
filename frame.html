@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="frame.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="div">
+        <div class="loop">
+            <div class="start-look"></div>
+            <button>
+                <!-- &#129034; -->
+                <p> Start</p>
+            </button>
+
+
+            <img class="fish1" src="fish1.png" alt="">
+            <img class="fish2" src="fish2.png" alt="">
+            <img class="fish3" src="fish3.png" alt="">
+            <img class="fish4" src="fish4.png" alt="">
+            <img class="fish5" src="fish5.webp" alt="">
+            <img class="fish6" src="fish6.webp" alt="">
+            <img class="fish7" src="fish7.png" alt="">
+
+            <div class="bubble"></div>
+            <div class="bubble1a"></div>
+            <div class="bubble1b"></div>
+
+            <div class="bubble bubble2"></div>
+            <div class="bubble bubble2a"></div>
+            <div class="bubble bubble2b"></div>
+
+            <div class="bubble bubble3"></div>
+            <div class="bubble bubble3a"></div>
+            <div class="bubble bubble3b"></div>
+
+        </div>
+    </div>
+
+    <audio id="player" loop>
+        <source src="sound.mp3" type="audio/mpeg">
+    </audio>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("player");
+            const button = document.querySelector("button");
+            const loop = document.querySelector(".loop");
+            const overlay = document.querySelector(".start-look");
+
+            button.addEventListener("click", () => {
+                // Start audio
+                audio.play().catch(err => console.log("Autoplay blocked:", err));
+
+                // Start animations
+                loop.querySelectorAll("img, .bubble, .bubble1a, .bubble1b, .bubble2, .bubble2a, .bubble2b, .bubble3, .bubble3a, .bubble3b")
+                    .forEach(el => el.style.animationPlayState = "running");
+
+                // Hide overlay + button
+                overlay.style.display = "none";
+                button.style.display = "none";
+            });
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>

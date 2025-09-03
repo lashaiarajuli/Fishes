@@ -1,0 +1,601 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+.div {
+    border: 3px solid black;
+    padding: 10px;
+    background-color: gray;
+    height: 90%;
+    width: 90%;
+}
+
+.loop {
+    position: relative;
+    /* width: 1000px; */
+    width: 100%;
+    height: 100%;
+    background: url(pic.png);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.loop img {
+    height: 90px;
+}
+
+.start-look {
+    width: 1000px;
+    height: 100%;
+    background-color: rgb(53, 47, 47);
+    filter: blur(255px);
+
+
+}
+
+button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    padding: 25px 90px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 12px;
+    z-index: 0;
+
+}
+
+button::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+}
+
+button::before {
+    content: '';
+    background: linear-gradient(45deg,
+            #ff0000, #ff7300, #fffb00, #48ff00,
+            #00ffd5, #002bff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 18s linear infinite;
+    transition: opacity .3s ease-in-out;
+
+    border-radius: 10px;
+    opacity: 0;
+
+
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+button:active:after {
+    background: transparent;
+}
+
+button:active {
+    color: #000;
+    font-weight: bold;
+}
+
+p {
+    letter-spacing: 5px;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* Fishes ---------------- Fishes -------------- Fishes ------------ Fishes ------------- Fishes -------------- */
+
+.fish1 {
+    position: absolute;
+    left: -10%;
+    top: 200px;
+    animation: fish1 24s infinite;
+}
+
+@keyframes fish1 {
+    from {
+        left: -10%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+.fish2 {
+    position: absolute;
+    left: -10%;
+    top: 100px;
+    animation: fish2 31s infinite 2s;
+}
+
+@keyframes fish2 {
+    from {
+        left: -10%
+    }
+
+    to {
+        left: 100%
+    }
+}
+
+.fish3 {
+    position: absolute;
+    top: 450px;
+    transform: rotate(-12deg);
+    animation: fish3 22s infinite;
+}
+
+@keyframes fish3 {
+    from {
+        right: -250px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.fish4 {
+    position: absolute;
+    transform: rotate(4eg);
+    top: 300px;
+    animation: fish4 42s infinite;
+}
+
+@keyframes fish4 {
+    from {
+        right: -200px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.fish5 {
+    position: absolute;
+    transform: rotate(4eg);
+    top: 510px;
+    animation: fish5 28s infinite;
+}
+
+@keyframes fish5 {
+    from {
+        right: -200px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.fish6 {
+    position: absolute;
+    transform: rotate(4eg);
+    top: 10px;
+    width: 110px;
+    animation: fish6 46s infinite;
+}
+
+@keyframes fish6 {
+    from {
+        left: -200px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+.fish7 {
+    position: absolute;
+    top: 390px;
+    width: 110px;
+    animation: fish7 52s infinite;
+}
+
+@keyframes fish7 {
+    from {
+        right: -200px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+/* ---------- BUBBLE1 ----------------------------------------------------------------------------------------------------- */
+/* ---------- BUBBLE1 ----------------------------------------------------------------------------------------------------- */
+/* ---------- BUBBLE1 ----------------------------------------------------------------------------------------------------- */
+
+.bubble {
+    position: absolute;
+    top: 370px;
+    left: 520px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, .3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise1a 4.1s linear infinite, vibrate1a 0.5s linear infinite;
+}
+
+@keyframes rise1a {
+    form {
+        top: 370px;
+        left: 520px;
+    }
+
+    100% {
+        top: -20px;
+        left: 520px;
+    }
+}
+
+@keyframes vibrate1a {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.bubble1a {
+    position: absolute;
+    top: 370px;
+    left: 530px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, .3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise1b 5s linear infinite, vibrate1b 0.5s linear infinite;
+}
+
+@keyframes rise1b {
+    form {
+        top: 370px;
+        left: 530px;
+    }
+
+    100% {
+        top: -20px;
+        left: 530px;
+    }
+}
+
+@keyframes vibrate1b {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.bubble1b {
+    position: absolute;
+    top: 330px;
+    left: 530px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, .3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise1c 3.2s linear infinite, vibrate1c 0.5s linear infinite;
+}
+
+@keyframes rise1c {
+    form {
+        top: 330px;
+        left: 530px;
+    }
+
+    100% {
+        top: -20px;
+        left: 530px;
+    }
+}
+
+@keyframes vibrate1c {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+/* ---------- BUBBLE2 ----------------------------------------------------------------------------------------------------- */
+/* ---------- BUBBLE2 ----------------------------------------------------------------------------------------------------- */
+/* ---------- BUBBLE2 ----------------------------------------------------------------------------------------------------- */
+.bubble2 {
+    position: absolute;
+    top: 510px;
+    left: 660px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 10px rgba(74, 71, 71, 0.3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise2aa 3.2s linear infinite, vibrate2aa 0.5s linear infinite;
+}
+
+@keyframes rise2aa {
+    form {
+        top: 510px;
+        left: 660px;
+    }
+
+    100% {
+        top: -20px;
+        left: 650px;
+    }
+}
+
+@keyframes vibrate2aa {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.bubble2a {
+    position: absolute;
+    top: 510px;
+    left: 660px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 10px rgba(74, 71, 71, 0.3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise2bb 5.2s linear infinite, vibrate2bb 0.5s linear infinite;
+}
+
+@keyframes rise2bb {
+    form {
+        top: 510px;
+        left: 640px;
+    }
+
+    100% {
+        top: -20px;
+        left: 640px;
+    }
+}
+
+@keyframes vibrate2bb {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.bubble2b {
+    position: absolute;
+    top: 510px;
+    left: 680px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 10px rgba(74, 71, 71, 0.3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise2cc 4.2s linear infinite, vibrate2cc 0.5s linear infinite;
+}
+
+@keyframes rise2cc {
+    form {
+        top: 510px;
+        left: 680px;
+    }
+
+    100% {
+        top: -20px;
+        left: 680px;
+    }
+}
+
+@keyframes vibrate2cc {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+}
+
+/* ---------- BUBBLE3 ----------------------------------------------------------------------------------------------------- */
+/* ---------- BUBBLE3 ----------------------------------------------------------------------------------------------------- */
+/* ---------- BUBBLE3 ----------------------------------------------------------------------------------------------------- */
+.bubble3 {
+    position: absolute;
+    top: 525px;
+    left: 135px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 10px rgba(74, 71, 71, 0.3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise 5s linear infinite, vibrate 0.5s linear infinite;
+}
+
+@keyframes rise {
+    form {
+        top: 525px;
+        left: 135px;
+    }
+
+    100% {
+        top: -20px;
+        left: 135px;
+    }
+}
+
+@keyframes vibrate {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.bubble3a {
+    position: absolute;
+    top: 525px;
+    left: 148px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 10px rgba(74, 71, 71, 0.3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise1 4.7s linear infinite, vibrate1 0.6s linear infinite;
+}
+
+@keyframes rise1 {
+    form {
+        top: 525px;
+        left: 148px;
+    }
+
+    100% {
+        top: -20px;
+        left: 148px;
+    }
+}
+
+@keyframes vibrate1 {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.bubble3b {
+    position: absolute;
+    top: 525px;
+    left: 128px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 10px rgba(74, 71, 71, 0.3),
+        inset -3px -3px 10px rgba(255, 255, 255, .5);
+    animation: rise2 3.7s linear infinite, vibrate2 0.6s linear infinite;
+}
+
+@keyframes rise2 {
+    form {
+        top: 525px;
+        left: 128px;
+    }
+
+    100% {
+        top: -20px;
+        left: 128px;
+    }
+}
+
+@keyframes vibrate2 {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+/* END ------------------ END ----------------- END -------------------- END ------------------------- */
+
+.loop img,
+.bubble,
+.bubble1a,
+.bubble1b,
+.bubble2,
+.bubble2a,
+.bubble2b,
+.bubble3,
+.bubble3a,
+.bubble3b {
+    animation-play-state: paused;
+}
