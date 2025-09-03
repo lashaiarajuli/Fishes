@@ -133,7 +133,6 @@ p {
 
 .fish1 {
     position: absolute;
-    left: -10%;
     top: 200px;
     animation: fish1 24s infinite;
 }
@@ -150,18 +149,17 @@ p {
 
 .fish2 {
     position: absolute;
-    left: -10%;
     top: 100px;
-    animation: fish2 31s infinite 2s;
+    animation: fish2 31s infinite;
 }
 
 @keyframes fish2 {
     from {
-        left: -10%
+        left: -10%;
     }
 
     to {
-        left: 100%
+        left: 100%;
     }
 }
 
