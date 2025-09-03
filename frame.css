@@ -139,7 +139,7 @@ p {
 
 @keyframes fish1 {
     from {
-        left: -10%;
+        left: -200px;
     }
 
     to {
@@ -155,7 +155,7 @@ p {
 
 @keyframes fish2 {
     from {
-        left: -10%;
+        left: -200px;
     }
 
     to {
